@@ -11,49 +11,55 @@ public class Main {
         Player[] mennyeimegyeiJatekosok = Factory.playerArrayGenerator(playerSource);
         Team[] borsodiCsapatok          = Factory.teamArrayGenerator(teamsSource);
         
+        //ket inputos generatorok
+        Player[] veteranJatekosok = new Player[playerSource.split("#").length];
+        Team[] europaTeams = new Team[teamsSource.split("\\?").length];
+        Factory.playerArrayGenerator2input(veteranJatekosok,playerSource);
+        Factory.teamArrayGenerator2input(europaTeams,teamsSource);
+        
         System.out.println("4. feladat print");
-        teamOutput(borsodiCsapatok);
+        teamOutput(europaTeams);
         System.out.println("---");
         
         System.out.println("6. feladat print");
-        PrintTest.connectPlayersWithTeams(mennyeimegyeiJatekosok,borsodiCsapatok);
+        PrintTest.connectPlayersWithTeams(veteranJatekosok,europaTeams);
         System.out.println("---");
         
         System.out.println("7-1 feladat print");
-        PrintTest.youngestPlayer(mennyeimegyeiJatekosok);
+        PrintTest.youngestPlayer(veteranJatekosok);
         System.out.println("---");
         
         System.out.println("7-2 feladat print");
-        PrintTest.oldestTeam(borsodiCsapatok);
+        PrintTest.oldestTeam(europaTeams);
         System.out.println("---");
         
         System.out.println("7-3 feladat print");
-        PrintTest.topScorer(mennyeimegyeiJatekosok);
+        PrintTest.topScorer(veteranJatekosok);
         System.out.println("---");
         
         System.out.println("7-4 feladat print");
-        PrintTest.teamsGoalCount(borsodiCsapatok);
+        PrintTest.teamsGoalCount(europaTeams);
         System.out.println("---");
         
         System.out.println("7-5 feladat print");
-        PrintTest.captains(mennyeimegyeiJatekosok);
+        PrintTest.captains(veteranJatekosok);
         System.out.println("---");
         
         System.out.println("7-6 feladat print");
-        PrintTest.lessThanTwenty(borsodiCsapatok);
+        PrintTest.lessThanTwenty(europaTeams);
         System.out.println("---");
         
         System.out.println("7-7 feladat print");
-        Logic.captainGoals(mennyeimegyeiJatekosok);
+        Logic.captainGoals(veteranJatekosok);
         System.out.println("---");
         
         System.out.println("7-7 feladat print");
-        Logic.teamsOrderedByGoals(borsodiCsapatok);
+        Logic.teamsOrderedByGoals(europaTeams);
         System.out.println("---");
         
         System.out.println("7-8 es 7-9 feladat print");
         Integer userInput = Main.getTeamByUser();
-        Logic.listOfPlayerInTeam(borsodiCsapatok,userInput);
+        Logic.listOfPlayerInTeam(europaTeams,userInput);
         System.out.println("---");
         
         
