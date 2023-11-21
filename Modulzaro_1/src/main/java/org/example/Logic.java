@@ -88,6 +88,24 @@ public class Logic {
         return returnStringArray;
     }
     
+    public static Player[] captainsV2(Player[] players) {
+        Integer captainCount = 0;
+        for (int i = 0; i < players.length; i++) {
+            if (players[i].getIsCaptain()) {
+                captainCount++;
+            }
+        }
+        Integer captainArrayIndex = 0;
+        Player[] returnStringArray  = new Player[captainCount];
+        for (int i = 0; i < players.length; i++) {
+            if (players[i].getIsCaptain()) {
+                returnStringArray[captainArrayIndex] = players[i];
+                captainArrayIndex++;
+            }
+        }
+        return returnStringArray;
+    }
+    
     public static Boolean lessThanTwenty(Team[] teams) {
         Boolean returnBoolean = false;
         String[] teamsGoalsString = Logic.teamsGoalCount(teams);

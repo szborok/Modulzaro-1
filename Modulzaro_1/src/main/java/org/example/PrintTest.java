@@ -49,7 +49,7 @@ public class PrintTest {
     }
     
     public static void captains(Player[] players) {
-        Player[] captains = Logic.captains(players);
+        Player[] captains = Logic.captainsV2(players);
         
         System.out.println("The captains of each teams are the following:");
         for (int i = 0; i < captains.length; i++) {
